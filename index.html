@@ -1,0 +1,250 @@
+<html>
+  <head>
+    <title>Dental Clinic</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 50px;
+      }
+      .doctor-image {
+        width: 250px;
+        height: 200px;
+        object-fit: cover;
+        margin: 10px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+
+      .doctor-info {
+        margin-top: -10px;
+        background-color: aliceblue;
+        width: 250px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+      }
+
+      .doctor-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+      }
+
+      #doctor-images {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(200px, auto);
+        gap: 10px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #403f3b;
+        margin-top: 30px;
+        margin-bottom: -2px;
+        font-size: xx-large;
+        font-weight: 100;
+      }
+      
+      p {
+        text-align: center;
+        color: darkgray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select Doctor</h1>
+    <div
+      style="width: 100px; height: 2px; background-color: aqua; margin: auto"
+    ></div>
+    <div id="doctor-images"></div>
+    <script>
+      function loadImages(images) {
+        const imageContainer = document.getElementById("doctor-images");
+        images.forEach((imageObj, index) => {
+          const img = document.createElement("img");
+          img.classList.add("doctor-image");
+          img.src = imageObj.image;
+          img.alt = `Doctor ${index + 1}`;
+          img.loading = "lazy";
+
+          const doctorInfo = document.createElement("div");
+          doctorInfo.classList.add("doctor-info");
+          doctorInfo.innerHTML = `<p>${imageObj.name}</p><p>${imageObj.title}</p>`;
+
+          const container = document.createElement("div");
+          container.classList.add("doctor-container");
+          container.appendChild(img);
+          container.appendChild(doctorInfo);
+
+          imageContainer.appendChild(container);
+        });
+      }
+
+      const doctors = [
+        {
+          name: "Dr. Najwa",
+          title: "Dental Surgeon",
+          image: "https://picsum.photos/id/13/2500/1667",
+        },
+        {
+          name: "Dr. Ibrahim",
+          title: "Pediatric Dentist",
+          image: "https://picsum.photos/id/12/2500/1667",
+        },
+        {
+          name: "Dr. Mhanna",
+          title: "Orthodontist",
+          image: "https://picsum.photos/id/14/2500/1667",
+        },
+        {
+          name: "Dr. Wael",
+          title: "Prosthodontist",
+          image: "https://picsum.photos/id/20/3670/2462",
+        },
+        {
+          name: "Dr. Najwa",
+          title: "Dental Surgeon",
+          image: "https://picsum.photos/id/13/2500/1667",
+        },
+        {
+          name: "Dr. Ibrahim",
+          title: "Pediatric Dentist",
+          image: "https://picsum.photos/id/12/2500/1667",
+        },
+        {
+          name: "Dr. Mhanna",
+          title: "Orthodontist",
+          image: "https://picsum.photos/id/14/2500/1667",
+        },
+        {
+          name: "Dr. Wael",
+          title: "Prosthodontist",
+          image: "https://picsum.photos/id/20/3670/2462",
+        },
+        {
+          name: "Dr. Najwa",
+          title: "Dental Surgeon",
+          image: "https://picsum.photos/id/13/2500/1667",
+        },
+        {
+          name: "Dr. Ibrahim",
+          title: "Pediatric Dentist",
+          image: "https://picsum.photos/id/12/2500/1667",
+        },
+        {
+          name: "Dr. Mhanna",
+          title: "Orthodontist",
+          image: "https://picsum.photos/id/14/2500/1667",
+        },
+        {
+          name: "Dr. Wael",
+          title: "Prosthodontist",
+          image: "https://picsum.photos/id/20/3670/2462",
+        },
+        {
+          name: "Dr. Najwa",
+          title: "Dental Surgeon",
+          image: "https://picsum.photos/id/13/2500/1667",
+        },
+        {
+          name: "Dr. Ibrahim",
+          title: "Pediatric Dentist",
+          image: "https://picsum.photos/id/12/2500/1667",
+        },
+        {
+          name: "Dr. Mhanna",
+          title: "Orthodontist",
+          image: "https://picsum.photos/id/14/2500/1667",
+        },
+        {
+          name: "Dr. Wael",
+          title: "Prosthodontist",
+          image: "https://picsum.photos/id/20/3670/2462",
+        },
+        {
+          name: "Dr. Najwa",
+          title: "Dental Surgeon",
+          image: "https://picsum.photos/id/13/2500/1667",
+        },
+        {
+          name: "Dr. Ibrahim",
+          title: "Pediatric Dentist",
+          image: "https://picsum.photos/id/12/2500/1667",
+        },
+        {
+          name: "Dr. Mhanna",
+          title: "Orthodontist",
+          image: "https://picsum.photos/id/14/2500/1667",
+        },
+        {
+          name: "Dr. Wael",
+          title: "Prosthodontist",
+          image: "https://picsum.photos/id/20/3670/2462",
+        },
+        {
+          name: "Dr. Najwa",
+          title: "Dental Surgeon",
+          image: "https://picsum.photos/id/13/2500/1667",
+        },
+        {
+          name: "Dr. Ibrahim",
+          title: "Pediatric Dentist",
+          image: "https://picsum.photos/id/12/2500/1667",
+        },
+        {
+          name: "Dr. Mhanna",
+          title: "Orthodontist",
+          image: "https://picsum.photos/id/14/2500/1667",
+        },
+        {
+          name: "Dr. Wael",
+          title: "Prosthodontist",
+          image: "https://picsum.photos/id/20/3670/2462",
+        },
+        {
+          name: "Dr. Najwa",
+          title: "Dental Surgeon",
+          image: "https://picsum.photos/id/13/2500/1667",
+        },
+        {
+          name: "Dr. Ibrahim",
+          title: "Pediatric Dentist",
+          image: "https://picsum.photos/id/12/2500/1667",
+        },
+        {
+          name: "Dr. Mhanna",
+          title: "Orthodontist",
+          image: "https://picsum.photos/id/14/2500/1667",
+        },
+        {
+          name: "Dr. Wael",
+          title: "Prosthodontist",
+          image: "https://picsum.photos/id/20/3670/2462",
+        },
+        {
+          name: "Dr. Najwa",
+          title: "Dental Surgeon",
+          image: "https://picsum.photos/id/13/2500/1667",
+        },
+        {
+          name: "Dr. Ibrahim",
+          title: "Pediatric Dentist",
+          image: "https://picsum.photos/id/12/2500/1667",
+        },
+        {
+          name: "Dr. Mhanna",
+          title: "Orthodontist",
+          image: "https://picsum.photos/id/14/2500/1667",
+        },
+        {
+          name: "Dr. Wael",
+          title: "Prosthodontist",
+          image: "https://picsum.photos/id/20/3670/2462",
+        },
+      ];
+
+      loadImages(doctors);
+    </script>
+  </body>
+</html>
